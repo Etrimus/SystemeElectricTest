@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net7.0-windows</TargetFramework>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="appsettings.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="appsettings.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" Version="7.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SystemeElectric.AspNet\SystemeElectric.AspNet.csproj" />
+      <ProjectReference Include="..\SystemeElectric.Core\SystemeElectric.Core.csproj" />
+      <ProjectReference Include="..\SystemeElectric.DAL\SystemeElectric.DAL.csproj" />
+      <ProjectReference Include="..\SystemeElectric.Logging\SystemeElectric.Logging.csproj" />
+    </ItemGroup>
+
+</Project>

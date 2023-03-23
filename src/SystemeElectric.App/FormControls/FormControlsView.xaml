@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="SystemeElectric.App.FormControls.FormControlsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:formControls="clr-namespace:SystemeElectric.App.FormControls"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance formControls:FormControlsViewModel}">
+
+    <UserControl.Resources>
+
+        <Style TargetType="ButtonBase" x:Key="ButtonsStyle">
+            <Setter Property="Padding" Value="15" />
+        </Style>
+    </UserControl.Resources>
+
+    <ToolBar>
+        <ToggleButton Content="Start/stop cars" Style="{StaticResource ButtonsStyle}"
+                      Command="{Binding ToggleCarsThreadCommand}" IsChecked="{Binding IsCarsThreadActive}" />
+        <Separator />
+        <ToggleButton Content="Start/stop  drivers" Style="{StaticResource ButtonsStyle}"
+                      Command="{Binding ToggleDriversThreadCommand}" IsChecked="{Binding IsDriversThreadActive}" />
+        <Separator />
+        <Button Content="Open a database form" Command="{Binding OpenDatabaseFormCommand}"
+                Style="{StaticResource ButtonsStyle}" />
+    </ToolBar>
+</UserControl>

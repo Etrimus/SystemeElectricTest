@@ -1,0 +1,20 @@
+﻿<Window x:Class="SystemeElectric.App.DbData.DbDataWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dbData="clr-namespace:SystemeElectric.App.DbData"
+        mc:Ignorable="d"
+        Title="Database data"
+        MinHeight="300" MinWidth="450"
+        d:DataContext="{d:DesignInstance dbData:DbDataViewModel}">
+
+    <ListView ItemsSource="{Binding DataRows}">
+        <ListView.View>
+            <GridView>
+                <GridViewColumn DisplayMemberBinding="{Binding DateArrived}">Date</GridViewColumn>
+                <GridViewColumn DisplayMemberBinding="{Binding Title}">Title</GridViewColumn>
+            </GridView>
+        </ListView.View>
+    </ListView>
+</Window>
